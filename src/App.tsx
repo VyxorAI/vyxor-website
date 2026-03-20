@@ -17,6 +17,7 @@ import {
   Store,
   Mail,
   Instagram,
+  Facebook,
   Linkedin,
   Twitter,
   ShieldCheck,
@@ -84,7 +85,7 @@ const Navbar = () => (
       </div>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#problem" className="hover:text-brand-blue transition-colors">The Problem</a>
-        <a href="#solution" className="hover:text-brand-blue transition-colors">Our Solution</a>
+        <a href="#ai-solutions" className="hover:text-brand-blue transition-colors">Our Solutions</a>
         <a href="#features" className="hover:text-brand-blue transition-colors">Features</a>
         <a href="#industries" className="hover:text-brand-blue transition-colors">Industries</a>
       </div>
@@ -93,7 +94,7 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+  <section id="hero" className="relative pt-32 pb-20 overflow-hidden bg-white">
     <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent -z-10" />
     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
       <motion.div 
@@ -107,13 +108,13 @@ const Hero = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
           </span>
-          The Future of Front Desk Automation
+          Your AI Automation Partner
         </div>
         <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-6 tracking-tight">
-          The AI Receptionist That <span className="text-gradient">Scales Your Business</span> While You Sleep.
+          Welcome to Vyxor AI: <span className="text-gradient">AI Solutions That Automate</span> and Grow Your Business
         </h1>
         <p className="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
-          Stop losing revenue to missed calls. Vyxor AI answers instantly, books appointments, and captures leads 24/7—so you can focus on what you do best.
+          We help businesses automate communication, capture more leads, and increase revenue using AI, from AI receptionists to email automation and beyond.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 mb-10">
           <motion.a 
@@ -124,7 +125,7 @@ const Hero = () => (
             whileTap={{ scale: 0.95 }}
             className="group relative bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-xl shadow-brand-blue/20 flex items-center justify-center gap-2 overflow-hidden"
           >
-            <span className="relative z-10">Book Your Free Demo</span>
+            <span className="relative z-10">Book a Demo</span>
             <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             
             {/* Animated Shine Effect */}
@@ -297,27 +298,27 @@ const Problem = () => (
   <section id="problem" className="py-24 bg-brand-light">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-4xl md:text-5xl mb-6">The Cost of Silence</h2>
+        <h2 className="text-4xl md:text-5xl mb-6">The Cost of Inefficiency</h2>
         <p className="text-lg text-slate-600">
-          Every missed call is a missed opportunity. In the service industry, customers rarely leave voicemails—they just call your competitor.
+          Every missed lead is a missed opportunity. In today's fast-paced market, customers expect instant responses; if you're slow, they call your competitor.
         </p>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {[
           {
             icon: <Clock className="text-red-500" />,
-            title: "After-Hours Loss",
-            desc: "60% of potential clients call outside of business hours. If you're not answering, you're not booking."
+            title: "Missed Opportunities",
+            desc: "60% of potential leads reach out outside of business hours. If you're not responding, you're not growing."
           },
           {
             icon: <Users className="text-red-500" />,
-            title: "Busy Hour Bottleneck",
-            desc: "When your staff is busy serving clients, the phone goes unanswered. You shouldn't have to choose between service and sales."
+            title: "Communication Gaps",
+            desc: "When your team is busy, leads go cold. You shouldn't have to choose between operations and customer engagement."
           },
           {
             icon: <TrendingUp className="text-red-500" />,
             title: "Leaking Revenue",
-            desc: "The average salon loses R10 000+ per month simply because they couldn't pick up the phone in time."
+            desc: "The average business loses R10 000+ per month simply because they couldn't respond to leads and opportunities in time."
           }
         ].map((item, i) => (
           <motion.div 
@@ -340,47 +341,111 @@ const Problem = () => (
   </section>
 );
 
-const Solution = () => (
-  <section id="about" className="py-24 bg-white">
-    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <motion.div 
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="order-2 lg:order-1"
-      >
-        <img 
-          src="https://picsum.photos/seed/ai-tech/800/600" 
-          className="rounded-3xl shadow-2xl" 
-          referrerPolicy="no-referrer"
-          alt="AI Receptionist Interface"
-        />
-      </motion.div>
-      <motion.div 
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="order-1 lg:order-2"
-      >
-        <h2 className="text-4xl md:text-5xl mb-8">Meet Your New <br /><span className="text-brand-blue">24/7 AI Receptionist</span></h2>
-        <p className="text-lg text-slate-600 mb-8">
-          Vyxor AI isn't just a chatbot. It's a sophisticated voice intelligence system that handles your business calls exactly like a human receptionist would—only faster, cheaper, and more reliably.
-        </p>
-        <ul className="space-y-4">
-          {[
-            "Answers calls on the first ring, every time.",
-            "Integrates directly with your booking software.",
-            "Answers FAQs about services, pricing, and location.",
-            "Captures lead info and sends it to your CRM.",
-            "Never gets tired, never takes a day off."
-          ].map((text, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <CheckCircle2 className="text-brand-blue flex-shrink-0 mt-1" size={20} />
-              <span className="font-medium text-slate-700">{text}</span>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
+const CoreSolutions = () => (
+  <section id="core-solutions" className="py-24 bg-white">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-4xl md:text-5xl mb-6 font-display font-bold text-brand-navy">Our Core Solutions</h2>
+        <p className="text-lg text-slate-600">Powerful AI systems designed to handle your most critical business workflows.</p>
+      </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: <PhoneCall className="w-8 h-8 text-white" />,
+            title: "AI Receptionist",
+            desc: "Answers calls 24/7, books appointments directly into your calendar, and ensures you never miss a lead again.",
+            color: "bg-blue-600"
+          },
+          {
+            icon: <Mail className="w-8 h-8 text-white" />,
+            title: "Email Automation",
+            desc: "Automatically sends follow-ups, nurtures cold leads, and improves conversion rates with personalized AI messaging.",
+            color: "bg-indigo-600"
+          },
+          {
+            icon: <Zap className="w-8 h-8 text-white" />,
+            title: "Lead Follow-Up AI",
+            desc: "Instantly engages with new leads across all platforms, ensuring no missed opportunities and higher sales velocity.",
+            color: "bg-purple-600"
+          }
+        ].map((solution, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group text-center"
+          >
+            <div className={`w-16 h-16 ${solution.color} rounded-2xl flex items-center justify-center mb-8 mx-auto shadow-lg group-hover:scale-110 transition-transform`}>
+              {solution.icon}
+            </div>
+            <h3 className="text-2xl font-bold mb-4 text-brand-navy">{solution.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{solution.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const AISolutions = () => (
+  <section id="ai-solutions" className="py-24 bg-brand-light">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-4xl md:text-5xl mb-6 font-display font-bold text-brand-navy">Our AI Solutions</h2>
+        <p className="text-lg text-slate-600">Comprehensive automation tools to transform your business operations.</p>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "AI Receptionist",
+            desc: "24/7 call answering and appointment booking.",
+            benefit: "Zero missed calls, 100% booking rate."
+          },
+          {
+            title: "Email Automation",
+            desc: "Automated follow-ups and lead nurturing.",
+            benefit: "3x higher lead-to-client conversion."
+          },
+          {
+            title: "Customer Support AI",
+            desc: "Instant answers to customer queries across all platforms.",
+            benefit: "Reduce support tickets by up to 70%."
+          },
+          {
+            title: "Lead Follow-Up Automation",
+            desc: "Never let a lead go cold with instant AI engagement.",
+            benefit: "Engage leads in under 60 seconds."
+          },
+          {
+            title: "Appointment Scheduling",
+            desc: "Seamlessly sync with your calendar for hands-free booking.",
+            benefit: "Save 10+ hours of admin work weekly."
+          },
+          {
+            title: "Custom AI Automation Solutions",
+            desc: "Tailored AI workflows built for your specific business needs.",
+            benefit: "Scale your operations without adding staff."
+          }
+        ].map((item, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+            className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
+          >
+            <h3 className="text-xl font-bold mb-3 text-brand-navy">{item.title}</h3>
+            <p className="text-slate-600 mb-4 text-sm">{item.desc}</p>
+            <div className="pt-4 border-t border-slate-50 flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-brand-blue" />
+              <span className="text-xs font-bold text-brand-blue uppercase">{item.benefit}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -391,40 +456,40 @@ const Features = () => (
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl mb-4">Powerful Features for <br />Modern Businesses</h2>
-          <p className="text-white/60 text-lg">Everything you need to automate your front desk and scale your revenue.</p>
+          <p className="text-white/60 text-lg">Everything you need to automate your communication and scale your revenue.</p>
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           {
             icon: <Clock className="w-6 h-6" />,
-            title: "24/7 Call Answering",
-            desc: "Capture every lead, even at 3 AM. Our AI handles late-night inquiries and early-morning bookings seamlessly."
+            title: "24/7 Automation",
+            desc: "Capture every lead, even at 3 AM. Our AI handles late-night inquiries and early-morning follow-ups seamlessly."
           },
           {
             icon: <Calendar className="w-6 h-6" />,
-            title: "Smart Booking",
-            desc: "Direct integration with Fresha, Mindbody, and more. The AI checks your real-time availability and books slots."
+            title: "Smart Scheduling",
+            desc: "Direct integration with popular booking software. The AI checks your real-time availability and books slots."
           },
           {
             icon: <MessageSquare className="w-6 h-6" />,
             title: "Natural Conversations",
-            desc: "No 'Press 1 for Sales'. Our AI understands context, tone, and intent for a truly human-like experience."
+            desc: "Our AI understands context, tone, and intent for a truly human-like experience across voice and text."
           },
           {
             icon: <Users className="w-6 h-6" />,
-            title: "Lead Capture",
-            desc: "Automatically gathers names, phone numbers, and service interests, pushing them directly to your database."
+            title: "Lead Management",
+            desc: "Automatically gathers names, phone numbers, and interests, pushing them directly to your CRM or database."
           },
           {
             icon: <CheckCircle2 className="w-6 h-6" />,
-            title: "Instant FAQ",
-            desc: "Train the AI on your specific business details. It answers questions about parking, pricing, and policies instantly."
+            title: "Instant FAQ Support",
+            desc: "Train the AI on your specific business details. It answers questions about pricing and policies instantly."
           },
           {
             icon: <TrendingUp className="w-6 h-6" />,
             title: "ROI Analytics",
-            desc: "Track every call, every booking, and every dollar saved. See exactly how much revenue Vyxor AI is generating."
+            desc: "Track every lead, every booking, and every dollar saved. See exactly how much revenue Vyxor AI is generating."
           }
         ].map((feature, i) => (
           <motion.div 
@@ -451,35 +516,35 @@ const HowItWorks = () => (
   <section id="how-it-works" className="py-24 bg-white overflow-hidden">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center max-w-3xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-6xl mb-6 tracking-tight">How Vyxor AI <span className="text-brand-blue">Transforms</span> Your Front Desk</h2>
-        <p className="text-xl text-slate-600">A seamless, high-converting experience for every caller, from the first ring to the final confirmation.</p>
+        <h2 className="text-4xl md:text-6xl mb-6 tracking-tight">How Vyxor AI <span className="text-brand-blue">Automates</span> Your Business</h2>
+        <p className="text-xl text-slate-600">A seamless, high-converting experience for every lead, from the first interaction to the final confirmation.</p>
       </div>
       
       <div className="grid lg:grid-cols-4 gap-8">
         {[
           {
-            icon: <PhoneCall className="text-white" />,
+            icon: <Zap className="text-white" />,
             color: "bg-blue-500",
-            title: "Instant Response",
-            desc: "AI answers every call on the first ring, 24/7. No more busy signals or voicemails that go unreturned."
+            title: "Instant Engagement",
+            desc: "AI responds to every lead instantly, 24/7. No more waiting for follow-ups or missed opportunities."
           },
           {
             icon: <Calendar className="text-white" />,
             color: "bg-indigo-500",
-            title: "Smart Scheduling",
-            desc: "Automatically checks your real-time availability and books appointments directly into your calendar."
+            title: "Smart Automation",
+            desc: "Automatically handles scheduling, follow-ups, and data entry directly into your business systems."
           },
           {
             icon: <BellRing className="text-white" />,
             color: "bg-purple-500",
-            title: "Auto Reminders",
-            desc: "Sends instant SMS confirmations and follow-up reminders to drastically reduce no-shows."
+            title: "Nurturing Flows",
+            desc: "Sends automated SMS and email sequences to keep leads warm and reduce no-shows."
           },
           {
             icon: <ShieldCheck className="text-white" />,
             color: "bg-emerald-500",
-            title: "Lead Capture",
-            desc: "Gathers customer info and syncs with your CRM, ensuring you never lose a potential client again."
+            title: "Data Integration",
+            desc: "Gathers customer info and syncs with your CRM, ensuring your operations are always up to date."
           }
         ].map((item, i) => (
           <motion.div 
@@ -512,7 +577,7 @@ const HowItWorks = () => (
           </div>
           <div>
             <h4 className="text-2xl font-bold mb-1">Ready to automate?</h4>
-            <p className="text-white/60">Get your AI receptionist live in less than 48 hours.</p>
+            <p className="text-white/60">Get your AI solutions live in less than 48 hours.</p>
           </div>
         </div>
         <a 
@@ -532,9 +597,9 @@ const Industries = () => (
   <section id="industries" className="py-24 bg-brand-light">
     <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col md:flex-row items-center justify-between mb-16 text-center md:text-left">
-        <h2 className="text-4xl md:text-5xl mb-4 md:mb-0">Built for Service <br />Leaders</h2>
+        <h2 className="text-4xl md:text-5xl mb-4 md:mb-0">Built for Business <br />Leaders</h2>
         <p className="max-w-md text-slate-600">
-          We specialize in high-volume appointment-based businesses where every call matters.
+          We specialize in high-growth businesses where every lead and opportunity matters.
         </p>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
@@ -583,9 +648,9 @@ const ROICalculator = () => {
         >
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-8 font-display font-bold">Calculate Your <br />Missed Revenue</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 md:mb-8 font-display font-bold">Calculate Your <br />Missed Opportunities</h2>
               <p className="text-white/80 text-base md:text-lg mb-8 md:mb-10 leading-relaxed">
-                Most businesses underestimate the true cost of a missed call. Use our calculator to see how much Vyxor AI could be adding to your bottom line every year.
+                Most businesses underestimate the true cost of a missed lead. Use our calculator to see how much Vyxor AI could be adding to your bottom line every year.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                 <div className="bg-white/5 p-5 md:p-6 rounded-2xl border border-white/10">
@@ -598,7 +663,7 @@ const ROICalculator = () => {
                   <p className="text-2xl md:text-3xl font-display font-bold mb-1">
                     {monthlyMissed}
                   </p>
-                  <p className="text-white/50 text-[10px] md:text-xs uppercase tracking-wider font-bold">Missed Calls Saved / Mo</p>
+                  <p className="text-white/50 text-[10px] md:text-xs uppercase tracking-wider font-bold">Missed Leads Saved / Mo</p>
                 </div>
               </div>
             </div>
@@ -613,7 +678,7 @@ const ROICalculator = () => {
                 {/* Monthly Calls */}
                 <div>
                   <div className="flex justify-between mb-3 md:mb-4">
-                    <label className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">Avg. Monthly Calls</label>
+                    <label className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">Avg. Monthly Leads</label>
                     <span className="text-brand-blue font-bold text-sm md:text-base">{calls}</span>
                   </div>
                   <input 
@@ -630,7 +695,7 @@ const ROICalculator = () => {
                 {/* Missed Rate */}
                 <div>
                   <div className="flex justify-between mb-3 md:mb-4">
-                    <label className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">% of Calls Missed</label>
+                    <label className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wide">% of Leads Missed</label>
                     <span className="text-brand-blue font-bold text-sm md:text-base">{missedRate}%</span>
                   </div>
                   <input 
@@ -694,7 +759,7 @@ const CTA = () => (
       >
         <h2 className="text-5xl md:text-6xl mb-8">Ready to Scale Your <br />Business?</h2>
         <p className="text-xl text-slate-600 mb-12">
-          Join the hundreds of service businesses that have eliminated missed calls and maximized their revenue with Vyxor AI.
+          Join the hundreds of businesses that have eliminated missed leads and maximized their revenue with Vyxor AI automation.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
@@ -703,7 +768,7 @@ const CTA = () => (
             rel="noopener noreferrer"
             className="bg-brand-blue text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-blue-800 transition-all shadow-2xl shadow-brand-blue/30 text-center"
           >
-            Book Your Free Demo
+            Book a Demo
           </a>
           <div className="flex flex-col items-center gap-2">
             <a 
@@ -724,28 +789,28 @@ const FAQ = () => {
 
   const faqs = [
     {
-      q: "Does Vyxor AI sound like a robot?",
-      a: "Not at all. We use state-of-the-art voice synthesis that captures human-like tone, pacing, and inflection. Most callers won't even realize they're speaking to an AI, they'll just be impressed by how quickly their call was answered."
+      q: "What is AI automation for businesses?",
+      a: "AI automation involves using artificial intelligence to handle repetitive tasks, manage communications, and optimize workflows. For businesses, this means AI can answer calls, respond to emails, follow up with leads, and schedule appointments without human intervention, allowing your team to focus on high-value work."
     },
     {
-      q: "Can it actually book appointments into my specific calendar?",
-      a: "Yes. Vyxor AI integrates directly with popular booking platforms like Fresha, Mindbody, and Google Calendar. It checks your real-time availability and places the booking directly into your system, just like a human would."
+      q: "How does Vyxor AI work?",
+      a: "Vyxor AI integrates with your existing tools (CRM, calendars, email) and uses advanced AI models to interact with your customers. Whether it's a voice call or an email, the AI understands the context and intent, providing human-like responses and taking actions like booking appointments or updating lead status."
     },
     {
-      q: "What happens if the AI doesn't know the answer to a question?",
-      a: "If a query is too complex, Vyxor AI gracefully captures the caller's details and the nature of their request, then instantly notifies you or your team via SMS or email. You never lose a lead, and you can step in exactly when needed."
+      q: "What services do you offer?",
+      a: "We offer a comprehensive suite of AI automation solutions, including 24/7 AI Receptionists, Email Automation, Customer Support AI, Lead Follow-Up Automation, and custom AI workflows tailored to your specific business needs."
     },
     {
-      q: "Is it really available 24/7, even on holidays?",
-      a: "Absolutely. Vyxor AI never sleeps, never takes sick leave, and doesn't celebrate holidays. Whether a client calls at 3 AM on New Year's Day or during your busiest lunch rush, they'll get a professional response every single time."
+      q: "Can it integrate with my existing systems?",
+      a: "Yes. Vyxor AI is built to play well with others. We integrate directly with popular platforms like Fresha, Mindbody, Google Calendar, and most major CRM systems to ensure a seamless flow of data across your business."
     },
     {
-      q: "How does the cost compare to hiring a full-time receptionist?",
-      a: "Vyxor AI typically costs less than 10% of a full-time employee's salary. You get 24/7 coverage, zero overhead, no training requirements, and a system that scales with your business, saving you thousands in monthly operational costs."
+      q: "Does the AI sound like a robot?",
+      a: "Not at all. We use state-of-the-art voice synthesis and natural language processing that captures human-like tone and inflection. Most customers won't even realize they're speaking to an AI; they'll just be impressed by the instant, professional service."
     },
     {
-      q: "Is it difficult to set up for my specific business?",
-      a: "We handle the heavy lifting. Our team works with you to 'train' the AI on your business hours, pricing, services, and FAQs. Most businesses are fully automated and live within 48-72 hours."
+      q: "How long does it take to set up?",
+      a: "Most of our AI solutions can be fully configured and live within 48 to 72 hours. We handle the heavy lifting of training the AI on your business details so you can start seeing results immediately."
     }
   ];
 
@@ -811,15 +876,33 @@ const Footer = () => (
             <span className="text-xl font-display font-bold">Vyxor AI</span>
           </div>
           <p className="text-white/50 text-sm leading-relaxed mb-6">
-            The world's most advanced AI receptionist for service businesses. Never miss another client, 24/7.
+            Your AI automation partner. We help businesses automate communication and operations to scale revenue with AI solutions.
           </p>
           <div className="flex gap-4">
+            <a 
+              href="https://www.instagram.com/vyxorai/?hl=en" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white/50 hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a 
+              href="https://www.facebook.com/profile.php?id=61579550702502" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white/50 hover:text-white transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
           </div>
         </div>
         <div>
           <h4 className="font-bold mb-6">Product</h4>
           <ul className="space-y-4 text-sm text-white/50">
-            <li><a href="#about" className="hover:text-white transition-colors">AI Receptionist</a></li>
+            <li><a href="#core-solutions" className="hover:text-white transition-colors">AI Solutions</a></li>
             <li><a href="#features" className="hover:text-white transition-colors">Integrations</a></li>
             <li><a href="#roi" className="hover:text-white transition-colors">ROI Calculator</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
@@ -828,7 +911,7 @@ const Footer = () => (
         <div>
           <h4 className="font-bold mb-6">Company</h4>
           <ul className="space-y-4 text-sm text-white/50">
-            <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#problem" className="hover:text-white transition-colors">The Problem</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
@@ -877,7 +960,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <Problem />
-      <Solution />
+      <CoreSolutions />
+      <AISolutions />
       <Features />
       <HowItWorks />
       <FAQ />
